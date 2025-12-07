@@ -5,67 +5,115 @@
 
   <url>
     <loc>https://quick-meal-magic.example.com/</loc>
-    <lastmod>2025-12-07T10:31:28.243Z</lastmod>
+    <lastmod>2025-12-07T11:10:59.632Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/category/chicken</loc>
-    <lastmod>2025-12-07T10:31:28.243Z</lastmod>
+    <lastmod>2025-12-07T11:10:59.632Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/category/beef</loc>
-    <lastmod>2025-12-07T10:31:28.243Z</lastmod>
+    <lastmod>2025-12-07T11:10:59.632Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/category/dinner</loc>
-    <lastmod>2025-12-07T10:31:28.243Z</lastmod>
+    <lastmod>2025-12-07T11:10:59.632Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/category/various</loc>
-    <lastmod>2025-12-07T10:31:28.243Z</lastmod>
+    <lastmod>2025-12-07T11:10:59.632Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/category/air-fryer</loc>
-    <lastmod>2025-12-07T10:31:28.243Z</lastmod>
+    <lastmod>2025-12-07T11:10:59.632Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/category/breakfast</loc>
-    <lastmod>2025-12-07T10:31:28.243Z</lastmod>
+    <lastmod>2025-12-07T11:10:59.632Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://quick-meal-magic.example.com/recipe/cheap-recipes-easy-beef-stir-fry-in-30-minutes</loc>
+    <lastmod>2025-12-07T11:09:23.769Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quick-meal-magic.example.com/recipe/ultimate-christmas-beef-wellington-recipe-perfect-for-festive-feasts</loc>
+    <lastmod>2025-12-07T11:09:23.863Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quick-meal-magic.example.com/recipe/ultimate-beef-recipe-cards-perfect-every-time</loc>
+    <lastmod>2025-12-07T11:09:23.913Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quick-meal-magic.example.com/recipe/irresistible-chicken-breast-recipes-quick-and-easy</loc>
+    <lastmod>2025-12-07T11:09:23.961Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quick-meal-magic.example.com/recipe/the-ultimate-recipes-cake-a-delicious-journey-awaits</loc>
+    <lastmod>2025-12-07T11:09:24.009Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quick-meal-magic.example.com/recipe/hearty-crockpot-beef-stew-recipe-for-busy-days</loc>
+    <lastmod>2025-12-07T11:09:24.057Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quick-meal-magic.example.com/recipe/perfectly-chewy-recipes-cookies-a-sweet-delight</loc>
+    <lastmod>2025-12-07T11:09:24.105Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quick-meal-magic.example.com/recipe/irresistible-recipes-chicken-juicy-and-flavorful-every-time</loc>
+    <lastmod>2025-12-07T11:09:24.156Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://quick-meal-magic.example.com/recipe/stunning-recipes-book-cover-create-a-beef-delight</loc>
-    <lastmod>2025-12-07T10:28:55.432Z</lastmod>
+    <lastmod>2025-12-07T11:09:24.204Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/recipe/perfect-homemade-bread-recipes-easy-steps-tips</loc>
-    <lastmod>2025-12-07T10:28:55.518Z</lastmod>
+    <lastmod>2025-12-07T11:09:24.252Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/recipe/delicious-beef-recipe-inspired-by-black-culinary-traditions</loc>
-    <lastmod>2025-12-07T10:24:47.570Z</lastmod>
+    <lastmod>2025-12-07T11:09:24.300Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/recipe/beef-recipe-book-ideas-ultimate-guide-to-flavorful-dishes</loc>
-    <lastmod>2025-12-07T10:24:47.658Z</lastmod>
+    <lastmod>2025-12-07T11:09:24.349Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
