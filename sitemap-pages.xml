@@ -5,43 +5,43 @@
 
   <url>
     <loc>https://quick-meal-magic.example.com/</loc>
-    <lastmod>2025-12-07T13:59:27.817Z</lastmod>
+    <lastmod>2025-12-07T18:18:13.792Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/category/chicken</loc>
-    <lastmod>2025-12-07T13:59:27.817Z</lastmod>
+    <lastmod>2025-12-07T18:18:13.792Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/category/beef</loc>
-    <lastmod>2025-12-07T13:59:27.817Z</lastmod>
+    <lastmod>2025-12-07T18:18:13.792Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/category/dinner</loc>
-    <lastmod>2025-12-07T13:59:27.817Z</lastmod>
+    <lastmod>2025-12-07T18:18:13.792Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/category/various</loc>
-    <lastmod>2025-12-07T13:59:27.817Z</lastmod>
+    <lastmod>2025-12-07T18:18:13.792Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/category/air-fryer</loc>
-    <lastmod>2025-12-07T13:59:27.817Z</lastmod>
+    <lastmod>2025-12-07T18:18:13.792Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quick-meal-magic.example.com/category/breakfast</loc>
-    <lastmod>2025-12-07T13:59:27.817Z</lastmod>
+    <lastmod>2025-12-07T18:18:13.792Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
