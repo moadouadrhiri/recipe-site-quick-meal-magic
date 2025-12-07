@@ -10,15 +10,15 @@
   <style>
     
     :root {
-      --primary: #3b82f6;
+      --primary: #000000;
       --secondary: #10b981;
-      --font-main: 'Source Sans 3', 'Inter', system-ui, sans-serif;
+      --font-main: 'Inter', 'Source Sans 3', system-ui, sans-serif;
       --font-accent: 'Playfair Display', 'Georgia', serif;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: var(--font-main); line-height: 1.7; color: #333; background: #fff; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    header { background: #FFFAF5; border-bottom: 1px solid rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+    header { background: #FAFAFA; border-bottom: 1px solid rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
     .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
     header a.logo { color: var(--primary); text-decoration: none; font-family: var(--font-accent); font-weight: 700; font-size: 1.6rem; }
     nav { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
@@ -27,7 +27,7 @@
     .search-box { display: flex; align-items: center; gap: 8px; background: #f5f5f5; padding: 8px 15px; border-radius: 25px; }
     .search-box input { border: none; background: transparent; outline: none; font-size: 0.9rem; width: 150px; }
     .search-box button { background: none; border: none; cursor: pointer; color: #666; }
-    .page-header { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #3b82f610 0%, #10b98110 100%); }
+    .page-header { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #00000010 0%, #10b98110 100%); }
     .page-header h1 { font-family: var(--font-accent); font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
     .page-header p { color: #666; max-width: 600px; margin: 0 auto; }
     .content-section { padding: 60px 0; }
@@ -49,13 +49,13 @@
     .blog-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #eee; transition: all 0.3s; }
     .blog-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
     .blog-image { width: 100%; height: 220px; object-fit: cover; }
-    .blog-image.placeholder { background: linear-gradient(135deg, #3b82f620 0%, #10b98120 100%); }
+    .blog-image.placeholder { background: linear-gradient(135deg, #00000020 0%, #10b98120 100%); }
     .blog-content { padding: 25px; }
     .blog-content h2 { font-family: var(--font-accent); font-size: 1.4rem; margin-bottom: 12px; }
     .blog-content h2 a { color: #333; text-decoration: none; }
     .blog-content h2 a:hover { color: var(--primary); }
     .blog-content p { color: #666; font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; }
-    .badge { display: inline-block; background: #3b82f620; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 12px; }
+    .badge { display: inline-block; background: #00000020; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 12px; }
     .read-more { color: var(--primary); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 5px; }
     .read-more:hover { text-decoration: underline; }
     .empty-state { text-align: center; padding: 80px 20px; color: #666; }
