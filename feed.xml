@@ -5,7 +5,7 @@
     <link>https://quick-meal-magic.example.com</link>
     <description>Discover a variety of quick and easy meal solutions, from hearty dinners to delightful breakfasts, all designed for busy lifestyles. Find delicious recipes featuring ground beef, chicken, and more that can be whipped up in no time.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Dec 2025 11:22:34 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 07 Dec 2025 12:01:10 GMT</lastBuildDate>
     <atom:link href="https://quick-meal-magic.example.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://quick-meal-magic.example.com/logo.png</url>
@@ -13,6 +13,22 @@
       <link>https://quick-meal-magic.example.com</link>
     </image>
     
+    <item>
+      <title><![CDATA[Perfect Dessert Cookie Recipes - Delightful & Easy Treats]]></title>
+      <link>https://quick-meal-magic.example.com/recipe/perfect-dessert-cookie-recipes-delightful-easy-treats</link>
+      <description><![CDATA[Discover delightful dessert cookie recipes that are easy and delicious. Perfect for every occasion. Try now!]]></description>
+      <pubDate>Sun, 07 Dec 2025 11:59:13 GMT</pubDate>
+      <guid isPermaLink="true">https://quick-meal-magic.example.com/recipe/perfect-dessert-cookie-recipes-delightful-easy-treats</guid>
+      <enclosure url="https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-DPzVaUKy8w6NiFlmcRpEhc34.png?st=2025-12-07T10%3A55%3A51Z&se=2025-12-07T12%3A55%3A51Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=32836cae-d25f-4fe9-827b-1c8c59c442cc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T11%3A55%3A51Z&ske=2025-12-08T11%3A55%3A51Z&sks=b&skv=2024-08-04&sig=RO6oNd4GyoomAqPUMDIZexXOqPTqCQKkHSlglAyarj0%3D" type="image/jpeg"/>
+    </item>
+    <item>
+      <title><![CDATA[Healthy Dessert Recipes: Guilt-Free Indulgence]]></title>
+      <link>https://quick-meal-magic.example.com/recipe/healthy-dessert-recipes-guilt-free-indulgence</link>
+      <description><![CDATA[Discover the best recipes dessert healthy options to satisfy your sweet cravings. Indulge guilt-free with these easy, nutritious treats!]]></description>
+      <pubDate>Sun, 07 Dec 2025 11:59:13 GMT</pubDate>
+      <guid isPermaLink="true">https://quick-meal-magic.example.com/recipe/healthy-dessert-recipes-guilt-free-indulgence</guid>
+      <enclosure url="https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-Z1GMpYHNoXhahZRKwuEeZqGe.png?st=2025-12-07T10%3A58%3A15Z&se=2025-12-07T12%3A58%3A15Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=31d50bd4-689f-439b-a875-f22bd677744d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T11%3A58%3A15Z&ske=2025-12-08T11%3A58%3A15Z&sks=b&skv=2024-08-04&sig=xhdiTv0C53jPot1pV/k6GvRCYBf9yknNcjRp9MnSQcE%3D" type="image/jpeg"/>
+    </item>
     <item>
       <title><![CDATA[Authentic Moroccan Tanjia for Family: A Flavorful Feast]]></title>
       <link>https://quick-meal-magic.example.com/recipe/authentic-moroccan-tanjia-for-family-a-flavorful-feast</link>

@@ -19,7 +19,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="article:published_time" content="2025-12-07T11:09:24.204Z">
-  <meta property="article:modified_time" content="2025-12-07T11:22:34.043Z">
+  <meta property="article:modified_time" content="2025-12-07T12:01:10.549Z">
   <meta property="article:author" content="Quick Meal Magic">
   <meta property="article:section" content="Beef">
   <meta property="article:tag" content="recipes book cover">
@@ -449,29 +449,12 @@
       color: var(--primary);
     }
     
-    /* Recipe Content Grid */
+    /* Recipe Content - Vertical Stack Layout */
     .recipe-content { 
-      display: grid; 
-      grid-template-columns: 350px 1fr; 
+      display: flex;
+      flex-direction: column;
       gap: 48px; 
       padding: 0 0 48px;
-    }
-    @media (max-width: 1024px) { 
-      .recipe-content { grid-template-columns: 300px 1fr; gap: 32px; } 
-    }
-    @media (max-width: 768px) { 
-      .recipe-content { 
-        grid-template-columns: 1fr; 
-        gap: 32px; 
-      } 
-      .ingredients { 
-        position: static !important; 
-        order: -1;
-        width: 100%;
-      }
-      .instructions {
-        width: 100%;
-      }
     }
     
     /* Section Headers */
@@ -486,17 +469,8 @@
     
     /* Ingredients */
     .ingredients { 
-      position: sticky; 
-      top: 100px; 
-      align-self: start;
-      z-index: 10;
-    }
-    @media (max-width: 768px) {
-      .ingredients { 
-        position: relative;
-        top: auto;
-        z-index: 1;
-      }
+      width: 100%;
+      max-width: 800px;
     }
     .ingredients-header {
       display: flex;
@@ -1232,7 +1206,7 @@
       body { font-size: 11pt; line-height: 1.5; color: #000; background: #fff; }
       .container { max-width: 100% !important; padding: 0; }
       .recipe-hero { display: none; }
-      .recipe-content { grid-template-columns: 1fr !important; gap: 24px; }
+      .recipe-content { flex-direction: column !important; gap: 24px; }
       .ingredients { position: static; }
       h1 { font-size: 24pt; margin-bottom: 12px; }
       h2 { font-size: 14pt; margin-bottom: 12px; page-break-after: avoid; }
@@ -1330,7 +1304,7 @@
     }
   },
   "datePublished": "2025-12-07T11:09:24.204Z",
-  "dateModified": "2025-12-07T11:22:34.042Z",
+  "dateModified": "2025-12-07T12:01:10.549Z",
   "prepTime": "PT20M",
   "cookTime": "PT180M",
   "totalTime": "PT200M",
@@ -1590,7 +1564,7 @@
     }
   },
   "datePublished": "2025-12-07T11:09:24.204Z",
-  "dateModified": "2025-12-07T11:22:34.043Z",
+  "dateModified": "2025-12-07T12:01:10.549Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://quick-meal-magic.example.com/recipe/stunning-recipes-book-cover-create-a-beef-delight"
