@@ -5,7 +5,7 @@
     <link>https://quick-meal-magic.example.com</link>
     <description>Discover a variety of quick and easy meal solutions, from hearty dinners to delightful breakfasts, all designed for busy lifestyles. Find delicious recipes featuring ground beef, chicken, and more that can be whipped up in no time.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Dec 2025 11:10:59 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 07 Dec 2025 11:22:34 GMT</lastBuildDate>
     <atom:link href="https://quick-meal-magic.example.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://quick-meal-magic.example.com/logo.png</url>
@@ -13,6 +13,14 @@
       <link>https://quick-meal-magic.example.com</link>
     </image>
     
+    <item>
+      <title><![CDATA[Authentic Moroccan Tanjia for Family: A Flavorful Feast]]></title>
+      <link>https://quick-meal-magic.example.com/recipe/authentic-moroccan-tanjia-for-family-a-flavorful-feast</link>
+      <description><![CDATA[Discover a perfect Moroccan Tanjia for family gatherings. This recipe offers authentic flavors and easy steps. Try it today!]]></description>
+      <pubDate>Sun, 07 Dec 2025 11:22:15 GMT</pubDate>
+      <guid isPermaLink="true">https://quick-meal-magic.example.com/recipe/authentic-moroccan-tanjia-for-family-a-flavorful-feast</guid>
+      <enclosure url="https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-jIt31b6PpSXDfgVOiGKh4YM8.png?st=2025-12-07T10%3A19%3A47Z&se=2025-12-07T12%3A19%3A47Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=8eb2c87c-0531-4dab-acb3-b5e2adddce6c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T11%3A03%3A51Z&ske=2025-12-08T11%3A03%3A51Z&sks=b&skv=2024-08-04&sig=6J8MEalhyzBl3sCLDQ91zt/ekL6OvnsO2NL6isUHfio%3D" type="image/jpeg"/>
+    </item>
     <item>
       <title><![CDATA[Beef Recipe Book Ideas: Ultimate Guide to Flavorful Dishes]]></title>
       <link>https://quick-meal-magic.example.com/recipe/beef-recipe-book-ideas-ultimate-guide-to-flavorful-dishes</link>

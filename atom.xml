@@ -5,8 +5,19 @@
   <link href="https://quick-meal-magic.example.com/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://quick-meal-magic.example.com" rel="alternate" type="text/html"/>
   <id>https://quick-meal-magic.example.com/</id>
-  <updated>2025-12-07T11:10:59.633Z</updated>
+  <updated>2025-12-07T11:22:34.047Z</updated>
   
+  <entry>
+    <title><![CDATA[Authentic Moroccan Tanjia for Family: A Flavorful Feast]]></title>
+    <link href="https://quick-meal-magic.example.com/recipe/authentic-moroccan-tanjia-for-family-a-flavorful-feast" rel="alternate" type="text/html"/>
+    <id>https://quick-meal-magic.example.com/recipe/authentic-moroccan-tanjia-for-family-a-flavorful-feast</id>
+    <published>2025-12-07T11:22:15.264Z</published>
+    <updated>2025-12-07T11:22:15.264Z</updated>
+    <summary><![CDATA[Discover a perfect Moroccan Tanjia for family gatherings. This recipe offers authentic flavors and easy steps. Try it today!]]></summary>
+    <author>
+      <name>Quick Meal Magic</name>
+    </author>
+  </entry>
   <entry>
     <title><![CDATA[Beef Recipe Book Ideas: Ultimate Guide to Flavorful Dishes]]></title>
     <link href="https://quick-meal-magic.example.com/recipe/beef-recipe-book-ideas-ultimate-guide-to-flavorful-dishes" rel="alternate" type="text/html"/>

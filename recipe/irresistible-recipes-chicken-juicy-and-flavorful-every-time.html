@@ -19,7 +19,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="article:published_time" content="2025-12-07T11:09:24.156Z">
-  <meta property="article:modified_time" content="2025-12-07T11:10:59.629Z">
+  <meta property="article:modified_time" content="2025-12-07T11:22:34.042Z">
   <meta property="article:author" content="Quick Meal Magic">
   <meta property="article:section" content="Beef">
   <meta property="article:tag" content="recipes chicken">
@@ -224,6 +224,11 @@
       transition: all 0.2s ease;
       border: 2px solid transparent;
     }
+    .jump-btn {
+      background: var(--primary);
+      color: white;
+    }
+    .jump-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); filter: brightness(1.1); }
     .print-btn {
       background: white;
       color: var(--text-primary);
@@ -235,6 +240,110 @@
       color: white;
     }
     .pin-btn:hover { background: #C4001A; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .fb-btn {
+      background: #1877F2;
+      color: white;
+      padding: 14px 16px;
+    }
+    .fb-btn:hover { background: #166FE5; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .email-btn {
+      background: var(--text-secondary);
+      color: white;
+      padding: 14px 16px;
+    }
+    .email-btn:hover { background: var(--text-primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    
+    /* Why You'll Love This - Note Boxes */
+    .note-box {
+      background: linear-gradient(135deg, var(--warm-neutral) 0%, rgba(255,255,255,0.8) 100%);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+    .note-box-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+    .note-box-header svg {
+      width: 24px;
+      height: 24px;
+      color: var(--primary);
+    }
+    .note-box ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .note-box li {
+      padding: 8px 0 8px 28px;
+      position: relative;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .note-box li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+      background-size: 8px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    /* Why You'll Love This Box */
+    .why-love-box {
+      background: linear-gradient(135deg, #FDF2F8 0%, #FFFBF5 100%);
+      border-left-color: #E11D48;
+    }
+    .why-love-box .note-box-header {
+      color: #BE185D;
+    }
+    .why-love-box .note-box-header svg {
+      color: #E11D48;
+      fill: #E11D48;
+    }
+    .love-reasons li:empty { display: none; }
+    .love-reasons li::before {
+      background: #E11D48;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+      background-size: 8px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    /* Pro Tips Note Box */
+    .pro-tips-box {
+      background: linear-gradient(135deg, #FEF3CD 0%, #FFFBF2 100%);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+    .pro-tips-box .note-box-header {
+      color: #856404;
+    }
+    .pro-tips-box .note-box-header svg {
+      color: var(--accent);
+    }
+    .pro-tips-box li::before {
+      background: var(--accent);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z'/%3E%3C/svg%3E");
+      background-size: 8px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
     
     /* Meta Bar */
     .recipe-meta-bar {
@@ -402,10 +511,41 @@
       list-style: none;
     }
     .ingredient-item { 
-      padding: 14px 0; 
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0; 
       border-bottom: 1px solid var(--border-light);
     }
     .ingredient-item:last-child { border-bottom: none; }
+    
+    /* Interactive Numbered Toggle (bakeitgood style) */
+    .ingredient-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: white;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+    .ingredient-number:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .ingredient-number.selected {
+      background: var(--text-muted);
+      transform: scale(0.95);
+    }
+    
     .ingredient-checkbox {
       display: flex;
       align-items: flex-start;
@@ -413,38 +553,20 @@
       cursor: pointer;
       font-size: 1rem;
       line-height: 1.5;
+      flex: 1;
     }
     .ingredient-check { display: none; }
-    .checkmark {
-      width: 22px;
-      height: 22px;
-      border: 2px solid var(--border-light);
-      border-radius: 6px;
-      flex-shrink: 0;
-      margin-top: 2px;
-      transition: all 0.2s ease;
+    .ingredient-content {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4px;
+      transition: opacity 0.2s ease;
     }
-    .checkmark::after {
-      content: "";
-      width: 10px;
-      height: 6px;
-      border-left: 2px solid white;
-      border-bottom: 2px solid white;
-      transform: rotate(-45deg) scale(0);
-      transition: transform 0.15s ease;
+    .ingredient-content.selected {
+      opacity: 0.5;
+      text-decoration: line-through;
     }
-    .ingredient-check:checked + .checkmark {
-      background: var(--primary);
-      border-color: var(--primary);
-    }
-    .ingredient-check:checked + .checkmark::after { transform: rotate(-45deg) scale(1); }
-    .ingredient-check:checked ~ .ingredient-name,
-    .ingredient-check:checked ~ .ingredient-amount,
-    .ingredient-check:checked ~ .ingredient-unit,
-    .ingredient-check:checked ~ .ingredient-notes {
+    .ingredient-check:checked ~ .ingredient-content {
       opacity: 0.5;
       text-decoration: line-through;
     }
@@ -785,7 +907,105 @@
       flex-shrink: 0;
     }
     
-    /* Allergy Warnings Section */
+    /* Collapsible Section Styles */
+    .collapsible-section {
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      margin: 32px 0;
+      overflow: hidden;
+    }
+    .collapsible-section summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 24px;
+      cursor: pointer;
+      list-style: none;
+      background: var(--warm-neutral);
+      transition: background 0.2s ease;
+    }
+    .collapsible-section summary::-webkit-details-marker { display: none; }
+    .collapsible-section summary:hover { background: var(--border-light); }
+    .collapsible-section summary h3 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    .collapsible-section summary h3 svg {
+      width: 22px;
+      height: 22px;
+      color: var(--primary);
+    }
+    .collapsible-toggle-icon {
+      width: 28px;
+      height: 28px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+    .collapsible-toggle-icon::after {
+      content: "+";
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+    .collapsible-section[open] .collapsible-toggle-icon {
+      transform: rotate(45deg);
+    }
+    .collapsible-content {
+      padding: 24px;
+      background: white;
+    }
+    .collapsible-content p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+    .collapsible-content ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .collapsible-content li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .collapsible-content li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    
+    /* Allergy Warnings Collapsible */
+    .allergy-section summary { background: #FEF3CD; }
+    .allergy-section summary:hover { background: #FBE8A6; }
+    .allergy-section summary h3 { color: #856404; }
+    .allergy-section summary h3 svg { color: #C59100; }
+    .allergy-section .collapsible-content { background: #FFFCF5; }
+    .allergy-section .collapsible-content li::before { background: #C59100; }
+    
+    /* Nutrition Collapsible */
+    .nutrition-toggle summary { background: linear-gradient(135deg, var(--warm-neutral), white); }
+    
+    /* Allergy Warnings Section (Legacy Support) */
     .allergy-warnings {
       background: #FEF3CD;
       border: 1px solid #F0D87E;
@@ -1105,7 +1325,7 @@
     }
   },
   "datePublished": "2025-12-07T11:09:24.156Z",
-  "dateModified": "2025-12-07T11:10:59.629Z",
+  "dateModified": "2025-12-07T11:22:34.041Z",
   "prepTime": "PT15M",
   "cookTime": "PT40M",
   "totalTime": "PT55M",
@@ -1358,7 +1578,7 @@
     }
   },
   "datePublished": "2025-12-07T11:09:24.156Z",
-  "dateModified": "2025-12-07T11:10:59.629Z",
+  "dateModified": "2025-12-07T11:22:34.042Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://quick-meal-magic.example.com/recipe/irresistible-recipes-chicken-juicy-and-flavorful-every-time"
@@ -1439,6 +1659,10 @@
     <!-- Recipe Actions -->
     
     <div class="recipe-actions">
+      <a href="#recipe-card" class="action-btn jump-btn" data-testid="button-jump-recipe">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+        Jump to Recipe
+      </a>
       <button onclick="window.print()" class="action-btn print-btn" data-testid="button-print-recipe">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
         Print Recipe
@@ -1447,6 +1671,14 @@
          target="_blank" rel="noopener noreferrer" class="action-btn pin-btn" data-testid="button-pin-recipe">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
         Pin Recipe
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fquick-meal-magic.example.com%2Frecipe%2Firresistible-recipes-chicken-juicy-and-flavorful-every-time" 
+         target="_blank" rel="noopener noreferrer" class="action-btn fb-btn" title="Share on Facebook" data-testid="button-share-facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="mailto:?subject=Recipes%20Chicken%3A%20Juicy%20%26%20Flavorful%20Eve...&body=Check%20out%20this%20recipe%3A%20https%3A%2F%2Fquick-meal-magic.example.com%2Frecipe%2Firresistible-recipes-chicken-juicy-and-flavorful-every-time" 
+         class="action-btn email-btn" title="Share via Email" data-testid="button-share-email">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
       </a>
     </div>
     
@@ -1557,6 +1789,23 @@
       <p>Unlock the magic of perfect chicken recipes with this juicy and flavorful method that's quick and easy for any cook.</p>
     </div>
     
+    <!-- Why You'll Love This Note Box -->
+    <div class="note-box why-love-box">
+      <div class="note-box-header">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <strong>Why You'll Love This Recipe</strong>
+      </div>
+      <ul class="love-reasons">
+        <li>Quick prep - ready in just 15 minutes of hands-on time</li>
+        <li>Easy to make - perfect for beginner cooks</li>
+        
+        
+        <li>Simple ingredients - uses just 7 common ingredients</li>
+        <li>Authentic American flavors that taste homemade</li>
+        <li>Perfect for any occasion</li>
+      </ul>
+    </div>
+    
     <div class="recipe-content">
       <aside class="ingredients">
         <div class="ingredients-header">
@@ -1565,74 +1814,116 @@
         <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-4id4pdj7PLX1zegbXC1YQC9H.png?st=2025-12-07T09%3A30%3A56Z&se=2025-12-07T11%3A30%3A56Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=32836cae-d25f-4fe9-827b-1c8c59c442cc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T09%3A15%3A46Z&ske=2025-12-08T09%3A15%3A46Z&sks=b&skv=2024-08-04&sig=HejmDxfN9DqvO%2BdgX9rHUA35ZFS6naFqBfZpe/WqN0s%3D" alt="Fresh ingredients for Irresistible Recipes Chicken, including juicy chicken, herbs, spices, and vegetables, ready for cooking." class="step-image" loading="lazy" width="400" height="250">
         <div class="ingredients-card">
           <ul class="ingredient-list" itemprop="recipeIngredient">
-            <li class="ingredient-item">
+            <li class="ingredient-item" id="ingredient-1">
+        <span class="ingredient-number" role="button" tabindex="0" 
+              aria-pressed="false"
+              onclick="toggleIngredient(1)" 
+              onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIngredient(1)}"
+              data-testid="ingredient-toggle-1">01</span>
         <label class="ingredient-checkbox">
-          <input type="checkbox" class="ingredient-check">
-          <span class="checkmark"></span>
-          <span class="ingredient-amount" data-base="2">2</span>
-          <span class="ingredient-unit">pounds</span>
-          <span class="ingredient-name">chicken thighs</span>
-          <span class="ingredient-notes">(bone-in, skin-on)</span>
+          <input type="checkbox" class="ingredient-check" id="ingredient-check-1">
+          <span class="ingredient-content" id="ingredient-content-1">
+            <span class="ingredient-amount" data-base="2">2</span>
+            <span class="ingredient-unit">pounds</span>
+            <span class="ingredient-name">chicken thighs</span>
+            <span class="ingredient-notes">(bone-in, skin-on)</span>
+          </span>
         </label>
       </li>
-<li class="ingredient-item">
+<li class="ingredient-item" id="ingredient-2">
+        <span class="ingredient-number" role="button" tabindex="0" 
+              aria-pressed="false"
+              onclick="toggleIngredient(2)" 
+              onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIngredient(2)}"
+              data-testid="ingredient-toggle-2">02</span>
         <label class="ingredient-checkbox">
-          <input type="checkbox" class="ingredient-check">
-          <span class="checkmark"></span>
-          <span class="ingredient-amount" data-base="2">2</span>
-          <span class="ingredient-unit">tablespoons</span>
-          <span class="ingredient-name">olive oil</span>
-          <span class="ingredient-notes">(extra virgin)</span>
+          <input type="checkbox" class="ingredient-check" id="ingredient-check-2">
+          <span class="ingredient-content" id="ingredient-content-2">
+            <span class="ingredient-amount" data-base="2">2</span>
+            <span class="ingredient-unit">tablespoons</span>
+            <span class="ingredient-name">olive oil</span>
+            <span class="ingredient-notes">(extra virgin)</span>
+          </span>
         </label>
       </li>
-<li class="ingredient-item">
+<li class="ingredient-item" id="ingredient-3">
+        <span class="ingredient-number" role="button" tabindex="0" 
+              aria-pressed="false"
+              onclick="toggleIngredient(3)" 
+              onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIngredient(3)}"
+              data-testid="ingredient-toggle-3">03</span>
         <label class="ingredient-checkbox">
-          <input type="checkbox" class="ingredient-check">
-          <span class="checkmark"></span>
-          <span class="ingredient-amount" data-base="1">1</span>
-          <span class="ingredient-unit">teaspoon</span>
-          <span class="ingredient-name">garlic powder</span>
-          <span class="ingredient-notes">(use fresh if preferred)</span>
+          <input type="checkbox" class="ingredient-check" id="ingredient-check-3">
+          <span class="ingredient-content" id="ingredient-content-3">
+            <span class="ingredient-amount" data-base="1">1</span>
+            <span class="ingredient-unit">teaspoon</span>
+            <span class="ingredient-name">garlic powder</span>
+            <span class="ingredient-notes">(use fresh if preferred)</span>
+          </span>
         </label>
       </li>
-<li class="ingredient-item">
+<li class="ingredient-item" id="ingredient-4">
+        <span class="ingredient-number" role="button" tabindex="0" 
+              aria-pressed="false"
+              onclick="toggleIngredient(4)" 
+              onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIngredient(4)}"
+              data-testid="ingredient-toggle-4">04</span>
         <label class="ingredient-checkbox">
-          <input type="checkbox" class="ingredient-check">
-          <span class="checkmark"></span>
-          <span class="ingredient-amount" data-base="1">1</span>
-          <span class="ingredient-unit">teaspoon</span>
-          <span class="ingredient-name">paprika</span>
-          <span class="ingredient-notes">(smoked paprika for extra depth)</span>
+          <input type="checkbox" class="ingredient-check" id="ingredient-check-4">
+          <span class="ingredient-content" id="ingredient-content-4">
+            <span class="ingredient-amount" data-base="1">1</span>
+            <span class="ingredient-unit">teaspoon</span>
+            <span class="ingredient-name">paprika</span>
+            <span class="ingredient-notes">(smoked paprika for extra depth)</span>
+          </span>
         </label>
       </li>
-<li class="ingredient-item">
+<li class="ingredient-item" id="ingredient-5">
+        <span class="ingredient-number" role="button" tabindex="0" 
+              aria-pressed="false"
+              onclick="toggleIngredient(5)" 
+              onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIngredient(5)}"
+              data-testid="ingredient-toggle-5">05</span>
         <label class="ingredient-checkbox">
-          <input type="checkbox" class="ingredient-check">
-          <span class="checkmark"></span>
-          <span class="ingredient-amount" data-base="1">1</span>
-          <span class="ingredient-unit">teaspoon</span>
-          <span class="ingredient-name">salt</span>
-          <span class="ingredient-notes">(Kosher salt preferred)</span>
+          <input type="checkbox" class="ingredient-check" id="ingredient-check-5">
+          <span class="ingredient-content" id="ingredient-content-5">
+            <span class="ingredient-amount" data-base="1">1</span>
+            <span class="ingredient-unit">teaspoon</span>
+            <span class="ingredient-name">salt</span>
+            <span class="ingredient-notes">(Kosher salt preferred)</span>
+          </span>
         </label>
       </li>
-<li class="ingredient-item">
+<li class="ingredient-item" id="ingredient-6">
+        <span class="ingredient-number" role="button" tabindex="0" 
+              aria-pressed="false"
+              onclick="toggleIngredient(6)" 
+              onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIngredient(6)}"
+              data-testid="ingredient-toggle-6">06</span>
         <label class="ingredient-checkbox">
-          <input type="checkbox" class="ingredient-check">
-          <span class="checkmark"></span>
-          <span class="ingredient-amount" data-base="0.5">1/2</span>
-          <span class="ingredient-unit">teaspoon</span>
-          <span class="ingredient-name">black pepper</span>
-          <span class="ingredient-notes">(freshly ground)</span>
+          <input type="checkbox" class="ingredient-check" id="ingredient-check-6">
+          <span class="ingredient-content" id="ingredient-content-6">
+            <span class="ingredient-amount" data-base="0.5">1/2</span>
+            <span class="ingredient-unit">teaspoon</span>
+            <span class="ingredient-name">black pepper</span>
+            <span class="ingredient-notes">(freshly ground)</span>
+          </span>
         </label>
       </li>
-<li class="ingredient-item">
+<li class="ingredient-item" id="ingredient-7">
+        <span class="ingredient-number" role="button" tabindex="0" 
+              aria-pressed="false"
+              onclick="toggleIngredient(7)" 
+              onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleIngredient(7)}"
+              data-testid="ingredient-toggle-7">07</span>
         <label class="ingredient-checkbox">
-          <input type="checkbox" class="ingredient-check">
-          <span class="checkmark"></span>
-          <span class="ingredient-amount" data-base="1">1</span>
-          <span class="ingredient-unit">tablespoon</span>
-          <span class="ingredient-name">lemon juice</span>
-          <span class="ingredient-notes">(freshly squeezed)</span>
+          <input type="checkbox" class="ingredient-check" id="ingredient-check-7">
+          <span class="ingredient-content" id="ingredient-content-7">
+            <span class="ingredient-amount" data-base="1">1</span>
+            <span class="ingredient-unit">tablespoon</span>
+            <span class="ingredient-name">lemon juice</span>
+            <span class="ingredient-notes">(freshly squeezed)</span>
+          </span>
         </label>
       </li>
           </ul>
@@ -1704,61 +1995,74 @@
     </section>
     
     
-    <section class="allergy-warnings">
-      <h2>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        Allergy Warnings
-      </h2>
-      <p>Be sure to review every ingredient for potential allergens. Reach out to a healthcare provider if necessary.</p>
-      <ul>
-        <li>Always check ingredient labels for allergen information</li>
-        <li>Substitutions may alter allergen content</li>
-        <li>Cross-contamination may occur during preparation</li>
-      </ul>
-    </section>
+    <details class="collapsible-section allergy-section">
+      <summary>
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Allergy Warnings
+        </h3>
+        <span class="collapsible-toggle-icon"></span>
+      </summary>
+      <div class="collapsible-content">
+        <p>Be sure to review every ingredient for potential allergens. Reach out to a healthcare provider if necessary.</p>
+        <ul>
+          <li>Always check ingredient labels for allergen information</li>
+          <li>Substitutions may alter allergen content</li>
+          <li>Cross-contamination may occur during preparation</li>
+        </ul>
+      </div>
+    </details>
     
     
-    <section class="nutrition-section">
-      <h2>Nutrition Details (Per Portion) for Recipes chicken</h2>
-      <p class="nutrition-disclaimer">This information is meant for educational use and shouldn't replace medical guidance.</p>
-      <div class="nutrition-grid">
-        
-        <div class="nutrition-item">
-          <div class="nutrition-value">320</div>
-          <div class="nutrition-label">Calories</div>
-        </div>
-        
-        <div class="nutrition-item">
-          <div class="nutrition-value">35g</div>
-          <div class="nutrition-label">Protein</div>
-        </div>
-        
-        <div class="nutrition-item">
-          <div class="nutrition-value">2g</div>
-          <div class="nutrition-label">Carbs</div>
-        </div>
-        
-        <div class="nutrition-item">
-          <div class="nutrition-value">20g</div>
-          <div class="nutrition-label">Fat</div>
-        </div>
-        
-        <div class="nutrition-item">
-          <div class="nutrition-value">1g</div>
-          <div class="nutrition-label">Fiber</div>
-        </div>
-        
-        <div class="nutrition-item">
-          <div class="nutrition-value">1g</div>
-          <div class="nutrition-label">Sugar</div>
-        </div>
-        
-        <div class="nutrition-item">
-          <div class="nutrition-value">420mg</div>
-          <div class="nutrition-label">Sodium</div>
+    <details class="collapsible-section nutrition-toggle" open>
+      <summary>
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          Nutrition Details (Per Portion) for Recipes chicken
+        </h3>
+        <span class="collapsible-toggle-icon"></span>
+      </summary>
+      <div class="collapsible-content">
+        <p class="nutrition-disclaimer">This information is meant for educational use and shouldn't replace medical guidance.</p>
+        <div class="nutrition-grid">
+          
+          <div class="nutrition-item">
+            <div class="nutrition-value">320</div>
+            <div class="nutrition-label">Calories</div>
+          </div>
+          
+          <div class="nutrition-item">
+            <div class="nutrition-value">35g</div>
+            <div class="nutrition-label">Protein</div>
+          </div>
+          
+          <div class="nutrition-item">
+            <div class="nutrition-value">2g</div>
+            <div class="nutrition-label">Carbs</div>
+          </div>
+          
+          <div class="nutrition-item">
+            <div class="nutrition-value">20g</div>
+            <div class="nutrition-label">Fat</div>
+          </div>
+          
+          <div class="nutrition-item">
+            <div class="nutrition-value">1g</div>
+            <div class="nutrition-label">Fiber</div>
+          </div>
+          
+          <div class="nutrition-item">
+            <div class="nutrition-value">1g</div>
+            <div class="nutrition-label">Sugar</div>
+          </div>
+          
+          <div class="nutrition-item">
+            <div class="nutrition-value">420mg</div>
+            <div class="nutrition-label">Sodium</div>
+          </div>
         </div>
       </div>
-    </section>
+    </details>
     
     
     
@@ -1839,7 +2143,7 @@
     </section>
     
     <!-- Recipe Summary Card (Bottom) -->
-    <div class="recipe-summary-card">
+    <div id="recipe-card" class="recipe-summary-card">
       <div class="summary-card-header">
         <div class="summary-card-logo">
           <div class="summary-card-logo-icon">Q</div>
@@ -1971,6 +2275,23 @@
           btn.classList.add('active');
         }
       });
+    }
+    
+    // Interactive ingredient toggle (bakeitgood style)
+    function toggleIngredient(idx) {
+      const numEl = document.querySelector('#ingredient-' + idx + ' .ingredient-number');
+      const contentEl = document.getElementById('ingredient-content-' + idx);
+      const checkEl = document.getElementById('ingredient-check-' + idx);
+      
+      if (numEl && contentEl) {
+        numEl.classList.toggle('selected');
+        contentEl.classList.toggle('selected');
+        const isSelected = numEl.classList.contains('selected');
+        numEl.setAttribute('aria-pressed', isSelected.toString());
+        if (checkEl) {
+          checkEl.checked = isSelected;
+        }
+      }
     }
     
     document.querySelectorAll('.faq-item').forEach(item => {
