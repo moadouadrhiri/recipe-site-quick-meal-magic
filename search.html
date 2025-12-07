@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Recipes | Quick Meal Magic</title>
+  <meta name="description" content="Search through our collection of delicious recipes at Quick Meal Magic. Find exactly what you're looking for.">
+  <link rel="canonical" href="https://quick-meal-magic.example.com/search">
+  <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    
+    :root {
+      --primary: #3b82f6;
+      --secondary: #10b981;
+      --font-main: 'Source Sans 3', 'Inter', system-ui, sans-serif;
+      --font-accent: 'Playfair Display', 'Georgia', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-main); line-height: 1.7; color: #333; background: #fff; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    header { background: #FFFAF5; border-bottom: 1px solid rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+    header a.logo { color: var(--primary); text-decoration: none; font-family: var(--font-accent); font-weight: 700; font-size: 1.6rem; }
+    nav { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    nav a { color: #666; text-decoration: none; font-size: 0.9rem; padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
+    nav a:hover { color: var(--primary); background: rgba(0,0,0,0.05); }
+    .search-box { display: flex; align-items: center; gap: 8px; background: #f5f5f5; padding: 8px 15px; border-radius: 25px; }
+    .search-box input { border: none; background: transparent; outline: none; font-size: 0.9rem; width: 150px; }
+    .search-box button { background: none; border: none; cursor: pointer; color: #666; }
+    .page-header { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #3b82f610 0%, #10b98110 100%); }
+    .page-header h1 { font-family: var(--font-accent); font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+    .page-header p { color: #666; max-width: 600px; margin: 0 auto; }
+    .content-section { padding: 60px 0; }
+    footer { background: #222; color: #aaa; padding: 50px 0 30px; margin-top: 60px; }
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-section h4 { color: white; margin-bottom: 20px; font-size: 1.1rem; }
+    .footer-section ul { list-style: none; }
+    .footer-section ul li { margin-bottom: 10px; }
+    .footer-section ul a { color: #aaa; text-decoration: none; transition: color 0.2s; }
+    .footer-section ul a:hover { color: white; }
+    .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid #444; color: #777; font-size: 0.9rem; }
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 2rem; }
+      .page-header { padding: 40px 20px; }
+      .search-box input { width: 100px; }
+    }
+  
+    .search-container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    .search-form { display: flex; gap: 15px; margin-bottom: 40px; }
+    .search-input { flex: 1; padding: 15px 20px; border: 2px solid #eee; border-radius: 10px; font-size: 1.1rem; transition: border-color 0.2s; }
+    .search-input:focus { outline: none; border-color: var(--primary); }
+    .search-btn { background: var(--primary); color: white; border: none; padding: 15px 30px; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .search-btn:hover { background: #10b981; }
+    .results-count { color: #666; margin-bottom: 20px; }
+    .no-results { text-align: center; padding: 60px 20px; color: #666; }
+    .no-results h3 { font-family: var(--font-accent); color: var(--primary); margin-bottom: 15px; }
+    .search-results { display: grid; gap: 20px; }
+    .result-card { display: flex; gap: 20px; background: white; border: 1px solid #eee; border-radius: 12px; overflow: hidden; transition: all 0.2s; }
+    .result-card:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-color: var(--primary); }
+    .result-image { width: 200px; height: 150px; object-fit: cover; flex-shrink: 0; }
+    .result-content { padding: 20px; flex: 1; }
+    .result-content h3 { font-family: var(--font-accent); margin-bottom: 8px; }
+    .result-content h3 a { color: #333; text-decoration: none; }
+    .result-content h3 a:hover { color: var(--primary); }
+    .result-content p { color: #666; font-size: 0.95rem; margin-bottom: 10px; }
+    .result-meta { display: flex; gap: 15px; color: #999; font-size: 0.85rem; }
+    @media (max-width: 600px) {
+      .result-card { flex-direction: column; }
+      .result-image { width: 100%; height: 200px; }
+    }
+  </style>
+</head>
+<body>
+  
+  <header>
+    <div class="container header-content">
+      <a href="/" class="logo">Quick Meal Magic</a>
+      <nav>
+        <a href="/" >Home</a>
+        <a href="/recipes.html" >Recipes</a>
+        <a href="/categories.html" >Categories</a>
+        <a href="/authors.html" >Authors</a>
+        <a href="/blog.html" >Blog</a>
+        <div class="search-box">
+          <input type="text" placeholder="Search recipes..." id="search-input" data-testid="input-search">
+          <button type="button" onclick="window.location.href='/search.html?q=' + document.getElementById('search-input').value" data-testid="button-search">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="page-header">
+    <h1>Search Recipes</h1>
+    <p>Find your perfect recipe</p>
+  </div>
+  
+  <main class="container">
+    <div class="search-container">
+      <form class="search-form" onsubmit="performSearch(event)">
+        <input type="text" class="search-input" id="search-query" placeholder="Search for recipes..." autofocus data-testid="input-search-page">
+        <button type="submit" class="search-btn" data-testid="button-search-submit">Search</button>
+      </form>
+      
+      <div id="results-count" class="results-count"></div>
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </main>
+  
+  
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Quick Meal Magic</h4>
+          <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Discover a variety of quick and easy meal solutions, from hearty dinners to delightful breakfasts, all designed for busy lifestyles. Find delicious recipes featuring ground beef, chicken, and more that can be whipped up in no time.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/recipes.html">All Recipes</a></li>
+            <li><a href="/categories.html">Categories</a></li>
+            <li><a href="/authors.html">Our Authors</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="/category/chicken.html">Chicken</a></li>
+            <li><a href="/category/beef.html">Beef</a></li>
+            <li><a href="/category/dinner.html">Dinner</a></li>
+            <li><a href="/category/various.html">Various</a></li>
+            <li><a href="/category/air-fryer.html">Air Fryer</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Information</h4>
+          <ul>
+            <li><a href="/contact.html">Contact Us</a></li>
+            <li><a href="/help.html">Help Center</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/search.html">Search</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Quick Meal Magic. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    const recipes = [{"title":"Healthy Dessert Recipes: Guilt-Free Indulgence","slug":"healthy-dessert-recipes-guilt-free-indulgence","description":"Indulge guilt-free with our healthy dessert recipes! Enjoy delicious treats that satisfy your sweet tooth without compromising your diet.","category":"Dinner","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-Z1GMpYHNoXhahZRKwuEeZqGe.png?st=2025-12-07T10%3A58%3A15Z&se=2025-12-07T12%3A58%3A15Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=31d50bd4-689f-439b-a875-f22bd677744d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T11%3A58%3A15Z&ske=2025-12-08T11%3A58%3A15Z&sks=b&skv=2024-08-04&sig=xhdiTv0C53jPot1pV/k6GvRCYBf9yknNcjRp9MnSQcE%3D","prepTime":15,"cookTime":25,"difficulty":"easy"},{"title":"Perfect Dessert Cookie Recipes - Delightful & Easy Treats","slug":"perfect-dessert-cookie-recipes-delightful-easy-treats","description":"Indulge in these perfect dessert cookie recipes, crafted for both flavor and simplicity. A delightful treat for any occasion.","category":"Dinner","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-DPzVaUKy8w6NiFlmcRpEhc34.png?st=2025-12-07T10%3A55%3A51Z&se=2025-12-07T12%3A55%3A51Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=32836cae-d25f-4fe9-827b-1c8c59c442cc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T11%3A55%3A51Z&ske=2025-12-08T11%3A55%3A51Z&sks=b&skv=2024-08-04&sig=RO6oNd4GyoomAqPUMDIZexXOqPTqCQKkHSlglAyarj0%3D","prepTime":15,"cookTime":12,"difficulty":"easy"},{"title":"Authentic Moroccan Tanjia for Family: A Flavorful Feast","slug":"authentic-moroccan-tanjia-for-family-a-flavorful-feast","description":"Dive into the heart of Morocco with this authentic Tanjia recipe. Perfect for family gatherings, it brings rich flavors and warmth to your table.","category":"Beef","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-jIt31b6PpSXDfgVOiGKh4YM8.png?st=2025-12-07T10%3A19%3A47Z&se=2025-12-07T12%3A19%3A47Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=8eb2c87c-0531-4dab-acb3-b5e2adddce6c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T11%3A03%3A51Z&ske=2025-12-08T11%3A03%3A51Z&sks=b&skv=2024-08-04&sig=6J8MEalhyzBl3sCLDQ91zt/ekL6OvnsO2NL6isUHfio%3D","prepTime":20,"cookTime":180,"difficulty":"medium"},{"title":"Cheap Recipes: Easy Beef Stir Fry in 30 Minutes","slug":"cheap-recipes-easy-beef-stir-fry-in-30-minutes","description":"This beef stir fry is a game-changer for budget meals, combining simple ingredients into a delicious dish in just 30 minutes.","category":"Beef","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-UgRC4ZzLvWNzL6DEb9eiRKOz.png?st=2025-12-07T09%3A45%3A53Z&se=2025-12-07T11%3A45%3A53Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=38e27a3b-6174-4d3e-90ac-d7d9ad49543f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T10%3A45%3A53Z&ske=2025-12-08T10%3A45%3A53Z&sks=b&skv=2024-08-04&sig=y8mBmsDfL61XccVCJN05P9YBg/yj4Stsw/uILvVAlcM%3D","prepTime":15,"cookTime":15,"difficulty":"easy"},{"title":"Ultimate Christmas Beef Wellington Recipe - Perfect for Festive Feasts","slug":"ultimate-christmas-beef-wellington-recipe-perfect-for-festive-feasts","description":"This Beef Wellington is the quintessential Christmas recipe, combining tender beef with a rich, savory mushroom duxelles. Perfect for festive gatherings.","category":"Beef","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-1oi6Rqc8RNMR7BC6kpUqZfwy.png?st=2025-12-07T09%3A43%3A45Z&se=2025-12-07T11%3A43%3A45Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=c6569cb0-0faa-463d-9694-97df3dc1dfb1&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T10%3A05%3A38Z&ske=2025-12-08T10%3A05%3A38Z&sks=b&skv=2024-08-04&sig=vfIWDjsSEQiuq95MLzfNWG2JnGke18O4vGOnr6e6IkQ%3D","prepTime":45,"cookTime":35,"difficulty":"medium"},{"title":"Ultimate Beef Recipe Cards: Perfect Every Time","slug":"ultimate-beef-recipe-cards-perfect-every-time","description":"Transform your kitchen with our beef recipes cards, ensuring delicious results every time. Discover the secrets and tips that make these recipes special!","category":"Beef","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-tnCBJKdMVmqXSb8tMqtgtjGc.png?st=2025-12-07T09%3A41%3A35Z&se=2025-12-07T11%3A41%3A35Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=32836cae-d25f-4fe9-827b-1c8c59c442cc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T10%3A41%3A35Z&ske=2025-12-08T10%3A41%3A35Z&sks=b&skv=2024-08-04&sig=D8Dz02k2NylHWNZsRvNsnZLN9pkDvVgWBnVREt2w96I%3D","prepTime":20,"cookTime":240,"difficulty":"medium"},{"title":"Irresistible Chicken Breast Recipes - Quick and Easy","slug":"irresistible-chicken-breast-recipes-quick-and-easy","description":"Explore the best recipes chicken breast has to offer with our easy, flavorful methods. Perfect for busy nights, these dishes promise satisfaction.","category":"Beef","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-PY2eZYDp4UlUlSz1vavKyz6o.png?st=2025-12-07T09%3A39%3A33Z&se=2025-12-07T11%3A39%3A33Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=38e27a3b-6174-4d3e-90ac-d7d9ad49543f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T10%3A39%3A33Z&ske=2025-12-08T10%3A39%3A33Z&sks=b&skv=2024-08-04&sig=CTHuxGga46aM6QJYgfOsgKyUlhO1y/dT1a0NKpE15eA%3D","prepTime":20,"cookTime":25,"difficulty":"easy"},{"title":"The Ultimate Recipes Cake: A Delicious Journey Awaits","slug":"the-ultimate-recipes-cake-a-delicious-journey-awaits","description":"Unlock the magic of creating the perfect recipes cake with this delightful guide. Learn the secrets that make each slice irresistible.","category":"Beef","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-f1BZNHlmZIOsp70pS0xCoAA2.png?st=2025-12-07T09%3A37%3A19Z&se=2025-12-07T11%3A37%3A19Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=31d50bd4-689f-439b-a875-f22bd677744d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T10%3A37%3A19Z&ske=2025-12-08T10%3A37%3A19Z&sks=b&skv=2024-08-04&sig=LN/dY0Pt0zPRATmW7JdNeekkp/1TE3WL3ADyZgyc//w%3D","prepTime":20,"cookTime":30,"difficulty":"medium"},{"title":"Hearty Crockpot Beef Stew Recipe for Busy Days","slug":"hearty-crockpot-beef-stew-recipe-for-busy-days","description":"This crockpot beef stew is the ultimate comfort food, perfect for busy days. Enjoy a warm, hearty meal with minimal effort and maximum flavor.","category":"Beef","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-95ew6g5OMG0qx7iEC8jD73gc.png?st=2025-12-07T09%3A35%3A05Z&se=2025-12-07T11%3A35%3A05Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=8eb2c87c-0531-4dab-acb3-b5e2adddce6c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T10%3A35%3A05Z&ske=2025-12-08T10%3A35%3A05Z&sks=b&skv=2024-08-04&sig=fTbdW7pQG/w/1BLGV8IZFTPFhEjZEXGMnqpZcUKMG/8%3D","prepTime":20,"cookTime":480,"difficulty":"easy"},{"title":"Perfectly Chewy Recipes Cookies - A Sweet Delight","slug":"perfectly-chewy-recipes-cookies-a-sweet-delight","description":"Indulge in these perfectly chewy recipes cookies, a sweet delight that's easy to make and impossible to resist. Discover the magic today!","category":"Beef","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-wpsZqZFxvlKg2JYO3rFCfWz4.png?st=2025-12-07T09%3A32%3A57Z&se=2025-12-07T11%3A32%3A57Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=31d50bd4-689f-439b-a875-f22bd677744d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T10%3A32%3A57Z&ske=2025-12-08T10%3A32%3A57Z&sks=b&skv=2024-08-04&sig=mAonz3V7zwVr3QgzrxIa7uBLwFsSUsOoE10zvtsxzvU%3D","prepTime":20,"cookTime":12,"difficulty":"easy"},{"title":"Irresistible Recipes Chicken: Juicy and Flavorful Every Time","slug":"irresistible-recipes-chicken-juicy-and-flavorful-every-time","description":"Unlock the magic of perfect chicken recipes with this juicy and flavorful method that's quick and easy for any cook.","category":"Beef","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-VAXfT9L6TiCL031rkXwrBgo4.png?st=2025-12-07T09%3A30%3A29Z&se=2025-12-07T11%3A30%3A29Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=b2c0e1c0-cf97-4e19-8986-8073905d5723&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T09%3A53%3A52Z&ske=2025-12-08T09%3A53%3A52Z&sks=b&skv=2024-08-04&sig=CAdyaUvLUunoeowqCO54cZRuGAb%2BzsbWmfBrnFCQaYc%3D","prepTime":15,"cookTime":40,"difficulty":"easy"},{"title":"Stunning Recipes Book Cover: Create a Beef Delight","slug":"stunning-recipes-book-cover-create-a-beef-delight","description":"Unlock the secrets behind the perfect beef dish with our recipes book cover guide. Learn how to create a flavorful masterpiece that impresses every time!","category":"Beef","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-pdySwBPkFGvdXP01sRM0Ur56.png?st=2025-12-07T09%3A28%3A32Z&se=2025-12-07T11%3A28%3A32Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=c6569cb0-0faa-463d-9694-97df3dc1dfb1&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T10%3A22%3A11Z&ske=2025-12-08T10%3A22%3A11Z&sks=b&skv=2024-08-04&sig=etu7iulQ8dgB/m7BE7EibQ4NEo4zrUzQZsd3uVG1bEA%3D","prepTime":20,"cookTime":180,"difficulty":"medium"},{"title":"Perfect Homemade Bread Recipes: Easy Steps & Tips","slug":"perfect-homemade-bread-recipes-easy-steps-tips","description":"Uncover the magic of homemade bread with our easy recipes bread guide. Perfect for beginners, every loaf promises warmth and flavor.","category":"Beef","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-axBimKg3ZoZSS6PkmO71mqLt.png?st=2025-12-07T09%3A26%3A18Z&se=2025-12-07T11%3A26%3A18Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=c6569cb0-0faa-463d-9694-97df3dc1dfb1&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T10%3A26%3A18Z&ske=2025-12-08T10%3A26%3A18Z&sks=b&skv=2024-08-04&sig=fb3vHaw8uePGf14jNeYhMfdVxXWifbrJ3oiX3RTfWZU%3D","prepTime":20,"cookTime":35,"difficulty":"medium"},{"title":"Delicious Beef Recipe Inspired by Black Culinary Traditions","slug":"delicious-beef-recipe-inspired-by-black-culinary-traditions","description":"Discover a savory beef dish inspired by black culinary traditions. Perfect for dinner, it’s flavorful and heartwarming.","category":"Beef","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-CFyP2SorPUmcDEyw4p8NbqZC.png?st=2025-12-07T09%3A23%3A46Z&se=2025-12-07T11%3A23%3A46Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=c6569cb0-0faa-463d-9694-97df3dc1dfb1&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T10%3A23%3A46Z&ske=2025-12-08T10%3A23%3A46Z&sks=b&skv=2024-08-04&sig=HRhy6j6w%2BLe4wym56yqI%2BJJMjGunXvLDLcltka4IqtE%3D","prepTime":15,"cookTime":120,"difficulty":"medium"},{"title":"Beef Recipe Book Ideas: Ultimate Guide to Flavorful Dishes","slug":"beef-recipe-book-ideas-ultimate-guide-to-flavorful-dishes","description":"Explore the world of beef recipes with this comprehensive guide. Perfect for a recipe book filled with rich, savory dishes.","category":"Beef","image":"https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-beSgre0I6GQByZ3fK63f8oMa.png?st=2025-12-07T09%3A21%3A38Z&se=2025-12-07T11%3A21%3A38Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=31d50bd4-689f-439b-a875-f22bd677744d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T09%3A37%3A07Z&ske=2025-12-08T09%3A37%3A07Z&sks=b&skv=2024-08-04&sig=uRbjD0WM7ai7pDn8LZNfMLNBe5jpKUUmZ8XpJEI0HqA%3D","prepTime":20,"cookTime":180,"difficulty":"medium"}];
+    
+    function performSearch(e) {
+      if (e) e.preventDefault();
+      const query = document.getElementById('search-query').value.toLowerCase().trim();
+      const resultsContainer = document.getElementById('search-results');
+      const countContainer = document.getElementById('results-count');
+      
+      if (!query) {
+        resultsContainer.innerHTML = '<div class="no-results"><h3>Enter a search term</h3><p>Type something in the search box above to find recipes.</p></div>';
+        countContainer.textContent = '';
+        return;
+      }
+      
+      const results = recipes.filter(r => 
+        r.title.toLowerCase().includes(query) ||
+        r.description.toLowerCase().includes(query) ||
+        r.category.toLowerCase().includes(query)
+      );
+      
+      countContainer.textContent = `Found ${results.length} recipe${results.length !== 1 ? 's' : ''}`;
+      
+      if (results.length === 0) {
+        resultsContainer.innerHTML = '<div class="no-results"><h3>No recipes found</h3><p>Try different keywords or browse our categories.</p></div>';
+        return;
+      }
+      
+      resultsContainer.innerHTML = results.map(r => `
+        <article class="result-card">
+          ${r.image ? `<img src="${r.image}" alt="${r.title}" class="result-image" loading="lazy">` : ''}
+          <div class="result-content">
+            <h3><a href="/recipe/${r.slug}.html">${r.title}</a></h3>
+            <p>${r.description.slice(0, 150)}${r.description.length > 150 ? '...' : ''}</p>
+            <div class="result-meta">
+              ${r.category ? `<span>${r.category}</span>` : ''}
+              ${r.prepTime + r.cookTime > 0 ? `<span>${r.prepTime + r.cookTime} min</span>` : ''}
+              <span>${r.difficulty}</span>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+    
+    // Check URL params on load
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryParam = urlParams.get('q');
+    if (queryParam) {
+      document.getElementById('search-query').value = queryParam;
+      performSearch();
+    }
+  </script>
+</body>
+</html>
