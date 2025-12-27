@@ -27,9 +27,13 @@ User-agent: PerplexityBot
 Allow: /
 
 # Sitemaps
+Sitemap: https://quick-meal-magic.example.com/sitemap-index.xml
 Sitemap: https://quick-meal-magic.example.com/sitemap.xml
-Sitemap: https://quick-meal-magic.example.com/sitemap-pages.xml
+Sitemap: https://quick-meal-magic.example.com/sitemap-recipes.xml
+Sitemap: https://quick-meal-magic.example.com/sitemap-articles.xml
+Sitemap: https://quick-meal-magic.example.com/sitemap-authors.xml
 Sitemap: https://quick-meal-magic.example.com/sitemap-images.xml
+Sitemap: https://quick-meal-magic.example.com/sitemap-news.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1

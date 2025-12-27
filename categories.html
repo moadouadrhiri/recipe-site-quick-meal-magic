@@ -6,43 +6,235 @@
   <title>Recipe Categories | Quick Meal Magic</title>
   <meta name="description" content="Browse all recipe categories at Quick Meal Magic. Find recipes organized by type, cuisine, and more.">
   <link rel="canonical" href="https://quick-meal-magic.example.com/categories">
-  <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     
     :root {
       --primary: #000000;
       --secondary: #10b981;
-      --font-main: 'Inter', 'Source Sans 3', system-ui, sans-serif;
-      --font-accent: 'Playfair Display', 'Georgia', serif;
+      --accent: #E67E22;
+      --warm-bg: #F8F8F8;
+      --font-main: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-headline: 'Oswald', sans-serif;
+      --text-dark: #1a1a1a;
+      --text-secondary: #555;
+      --text-muted: #888;
+      --border-light: rgba(0,0,0,0.08);
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.1);
+      --shadow-lg: 0 16px 48px rgba(0,0,0,0.12);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: var(--font-main); line-height: 1.7; color: #333; background: #fff; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    header { background: #FAFAFA; border-bottom: 1px solid rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
-    .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-    header a.logo { color: var(--primary); text-decoration: none; font-family: var(--font-accent); font-weight: 700; font-size: 1.6rem; }
-    nav { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-    nav a { color: #666; text-decoration: none; font-size: 0.9rem; padding: 6px 12px; border-radius: 6px; transition: all 0.2s; }
-    nav a:hover { color: var(--primary); background: rgba(0,0,0,0.05); }
-    .search-box { display: flex; align-items: center; gap: 8px; background: #f5f5f5; padding: 8px 15px; border-radius: 25px; }
-    .search-box input { border: none; background: transparent; outline: none; font-size: 0.9rem; width: 150px; }
-    .search-box button { background: none; border: none; cursor: pointer; color: #666; }
-    .page-header { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #00000010 0%, #10b98110 100%); }
-    .page-header h1 { font-family: var(--font-accent); font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
-    .page-header p { color: #666; max-width: 600px; margin: 0 auto; }
-    .content-section { padding: 60px 0; }
-    footer { background: #222; color: #aaa; padding: 50px 0 30px; margin-top: 60px; }
-    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
-    .footer-section h4 { color: white; margin-bottom: 20px; font-size: 1.1rem; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-main); line-height: 1.8; color: var(--text-dark); background: #fff; font-size: 17px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Modern Header */
+    header { 
+      background: rgba(255,255,255,0.95); 
+      border-bottom: 1px solid var(--border-light); 
+      padding: 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .header-content { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      min-height: 72px;
+      gap: 24px; 
+    }
+    header a.logo { 
+      color: var(--primary); 
+      text-decoration: none; 
+      font-family: var(--font-accent); 
+      font-weight: 700; 
+      font-size: 1.75rem; 
+      font-style: italic; 
+      letter-spacing: -0.5px;
+      transition: opacity 0.2s;
+    }
+    header a.logo:hover { opacity: 0.8; }
+    nav { display: flex; gap: 4px; align-items: center; }
+    nav a { 
+      color: var(--text-secondary); 
+      text-decoration: none; 
+      font-size: 0.95rem; 
+      font-weight: 600; 
+      padding: 10px 18px; 
+      border-radius: var(--radius-sm); 
+      transition: all 0.2s ease; 
+      letter-spacing: 0.01em;
+      position: relative;
+    }
+    nav a:hover { color: var(--primary); background: var(--warm-bg); }
+    nav a[style*="color: var(--primary)"] { background: var(--warm-bg); }
+    .search-box { 
+      display: flex; 
+      align-items: center; 
+      gap: 8px; 
+      background: #f8f8f8; 
+      padding: 12px 20px; 
+      border-radius: var(--radius-lg); 
+      border: 2px solid transparent; 
+      transition: all 0.2s;
+      margin-left: 8px;
+    }
+    .search-box:focus-within { border-color: var(--primary); background: #fff; box-shadow: var(--shadow-sm); }
+    .search-box input { border: none; background: transparent; outline: none; font-size: 0.95rem; width: 160px; font-family: var(--font-main); }
+    .search-box button { background: none; border: none; cursor: pointer; color: var(--text-muted); display: flex; align-items: center; transition: color 0.2s; }
+    .search-box button:hover { color: var(--primary); }
+    
+    /* Mobile menu toggle */
+    .mobile-menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--text-dark); }
+    
+    /* Page header with gradient */
+    .page-header { 
+      padding: 80px 24px; 
+      text-align: center; 
+      background: linear-gradient(135deg, var(--warm-bg) 0%, #fff 50%, #00000008 100%);
+      position: relative;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+    }
+    .page-header h1 { 
+      font-family: var(--font-headline); 
+      font-size: clamp(2.5rem, 5vw, 3.5rem); 
+      color: var(--primary); 
+      margin-bottom: 20px; 
+      font-weight: 700; 
+      letter-spacing: 0.02em; 
+      text-transform: uppercase;
+    }
+    .page-header p { color: var(--text-secondary); max-width: 700px; margin: 0 auto; font-size: 1.15rem; line-height: 1.75; }
+    .content-section { padding: 80px 0; }
+    
+    /* Premium Footer */
+    footer { 
+      background: linear-gradient(180deg, #1a1a1a 0%, #111 100%); 
+      color: #999; 
+      padding: 80px 0 40px; 
+      margin-top: 100px;
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+    }
+    .footer-content { 
+      display: grid; 
+      grid-template-columns: 2fr repeat(3, 1fr); 
+      gap: 60px; 
+      margin-bottom: 60px; 
+    }
+    .footer-section h4 { 
+      color: white; 
+      margin-bottom: 28px; 
+      font-size: 0.85rem; 
+      font-weight: 700; 
+      letter-spacing: 0.1em; 
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    .footer-section h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--primary);
+    }
     .footer-section ul { list-style: none; }
-    .footer-section ul li { margin-bottom: 10px; }
-    .footer-section ul a { color: #aaa; text-decoration: none; transition: color 0.2s; }
-    .footer-section ul a:hover { color: white; }
-    .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid #444; color: #777; font-size: 0.9rem; }
+    .footer-section ul li { margin-bottom: 14px; }
+    .footer-section ul a { 
+      color: #888; 
+      text-decoration: none; 
+      transition: all 0.2s; 
+      font-weight: 500; 
+      font-size: 0.95rem;
+      display: inline-block;
+    }
+    .footer-section ul a:hover { color: white; transform: translateX(4px); }
+    .footer-section p { font-size: 0.95rem; line-height: 1.8; color: #777; }
+    .footer-section .site-description { margin-bottom: 24px; }
+    .footer-social { display: flex; gap: 12px; margin-top: 24px; }
+    .footer-social a { 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      width: 44px; 
+      height: 44px; 
+      background: rgba(255,255,255,0.08); 
+      border-radius: 50%; 
+      color: #888; 
+      transition: all 0.3s;
+    }
+    .footer-social a:hover { background: var(--primary); color: white; transform: translateY(-3px); }
+    .footer-bottom { 
+      text-align: center; 
+      padding-top: 40px; 
+      border-top: 1px solid rgba(255,255,255,0.08); 
+      color: #666; 
+      font-size: 0.9rem;
+    }
+    .footer-bottom a { color: #888; text-decoration: none; }
+    .footer-bottom a:hover { color: white; }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .footer-content { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    }
     @media (max-width: 768px) {
-      .page-header h1 { font-size: 2rem; }
-      .page-header { padding: 40px 20px; }
-      .search-box input { width: 100px; }
+      .page-header { padding: 60px 20px; }
+      .search-box input { width: 120px; }
+      nav { gap: 0; }
+      nav a { padding: 8px 14px; font-size: 0.9rem; }
+      .footer-content { grid-template-columns: 1fr; gap: 36px; text-align: center; }
+      .footer-section h4::after { left: 50%; transform: translateX(-50%); }
+      .footer-social { justify-content: center; }
+      .mobile-menu-toggle { display: block; }
+    }
+    @media (max-width: 480px) {
+      nav { display: none; }
+      nav.active { 
+        display: flex; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        right: 0; 
+        background: white; 
+        padding: 20px; 
+        border-bottom: 1px solid var(--border-light);
+        box-shadow: var(--shadow-md);
+      }
+      nav.active a { padding: 14px 20px; }
+      .search-box { display: none; }
+      nav.active .search-box { display: flex; width: 100%; margin: 12px 0 0; }
+      nav.active .search-box input { width: 100%; }
     }
   
     .categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; padding: 40px 0; }
@@ -61,6 +253,9 @@
   <header>
     <div class="container header-content">
       <a href="/" class="logo">Quick Meal Magic</a>
+      <button class="mobile-menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')" aria-label="Toggle menu" data-testid="button-mobile-menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
       <nav>
         <a href="/" >Home</a>
         <a href="/recipes.html" >Recipes</a>
@@ -106,7 +301,7 @@
     </a>
 
     <a href="/category/dinner.html" class="category-card" data-testid="card-category-dinner">
-      <div class="category-image" style="background-image: url('https://oaidalleapiprodscus.blob.core.windows.net/private/org-Incd5SrsFaXlOl8VGcUrzk8Q/user-OxzG0JBEtLszrY9qRwVp0epv/img-7x0dA23ymF1qyK9QGG4qUjJB.png?st=2025-12-07T11%3A15%3A33Z&se=2025-12-07T13%3A15%3A33Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=c6569cb0-0faa-463d-9694-97df3dc1dfb1&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-12-07T12%3A15%3A33Z&ske=2025-12-08T12%3A15%3A33Z&sks=b&skv=2024-08-04&sig=O%2BeZ1b7fDXVriF%2Btq78txTrltcnZopMHVl8ZKcvezcg%3D')">
+      <div class="category-image" style="background-image: url('couzintk.site/recipes/hero/f3c72fe9-103f-4fac-ab12-adc5156b41fc.png')">
         
       </div>
       <div class="category-info">
@@ -152,8 +347,22 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h4>Quick Meal Magic</h4>
-          <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Discover a variety of quick and easy meal solutions, from hearty dinners to delightful breakfasts, all designed for busy lifestyles. Find delicious recipes featuring ground beef, chicken, and more that can be whipped up in no time.</p>
+          <h4>About Quick Meal Magic</h4>
+          <p class="site-description">Discover a variety of quick and easy meal solutions, from hearty dinners to delightful breakfasts, all designed for busy lifestyles. Find delicious recipes featuring ground beef, chicken, and more that can be whipped up in no time.</p>
+          <div class="footer-social">
+            <a href="https://pinterest.com" target="_blank" rel="noopener" title="Follow on Pinterest">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" title="Follow on Facebook">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" title="Follow on Instagram">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="mailto:contact@quick-meal-magic.com" title="Email Us">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+          </div>
         </div>
         <div class="footer-section">
           <h4>Explore</h4>
@@ -162,6 +371,7 @@
             <li><a href="/categories.html">Categories</a></li>
             <li><a href="/authors.html">Our Authors</a></li>
             <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/search.html">Search</a></li>
           </ul>
         </div>
         <div class="footer-section">
@@ -172,20 +382,21 @@
             <li><a href="/category/dinner.html">Dinner</a></li>
             <li><a href="/category/various.html">Various</a></li>
             <li><a href="/category/air-fryer.html">Air Fryer</a></li>
+            <li><a href="/category/breakfast.html">Breakfast</a></li>
           </ul>
         </div>
         <div class="footer-section">
-          <h4>Information</h4>
+          <h4>Help & Info</h4>
           <ul>
             <li><a href="/contact.html">Contact Us</a></li>
             <li><a href="/help.html">Help Center</a></li>
             <li><a href="/privacy.html">Privacy Policy</a></li>
-            <li><a href="/search.html">Search</a></li>
+            <li><a href="/feed.xml">RSS Feed</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Quick Meal Magic. All rights reserved.</p>
+        <p>&copy; 2025 Quick Meal Magic. All rights reserved. | <a href="/privacy.html">Privacy</a> | <a href="/contact.html">Contact</a></p>
       </div>
     </div>
   </footer>
